@@ -40,6 +40,15 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.json({ 
+    status: 'OK', 
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/players', playerRoutes); // Removido authenticateToken para permitir acceso público
 app.use('/api/tournaments', tournamentRoutes);
