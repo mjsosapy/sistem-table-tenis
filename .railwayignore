@@ -1,16 +1,9 @@
 client/
 node_modules/
 .git/
-.env
-.env.local
-.env.development
-.env.test
-.env.production
+.env*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .DS_Store
 *.log
-client/build/
-client/public/
-client/src/
