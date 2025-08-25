@@ -1,0 +1,25 @@
+{
+  "name": "sistema-torneo-tt",
+  "version": "1.0.0",
+  "description": "Sistema de Gestión de Torneos de Tenis de Mesa",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "start": "node server/index.js",
+    "postinstall": "cd client && npm install && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "keywords": ["torneos", "tenis-mesa", "react", "nodejs"],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
